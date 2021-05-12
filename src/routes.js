@@ -1,0 +1,32 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = __importDefault(require("express"));
+var mongoose_1 = __importDefault(require("mongoose"));
+var ActiveController_1 = __importDefault(require("./controllers/ActiveController"));
+var BranchController_1 = __importDefault(require("./controllers/BranchController"));
+var CompanyController_1 = __importDefault(require("./controllers/CompanyController"));
+var UserController_1 = __importDefault(require("./controllers/UserController"));
+var router = express_1.default();
+var conn = mongoose_1.default.connection;
+conn.once("open", function () {
+});
+router.get('/active', ActiveController_1.default.index);
+router.post('/active', ActiveController_1.default.create);
+router.delete('/active/:id', ActiveController_1.default.delete);
+router.put('/active/:id', ActiveController_1.default.update);
+router.get('/branch', BranchController_1.default.index);
+router.post('/branch', BranchController_1.default.create);
+router.delete('/branch/:id', BranchController_1.default.delete);
+router.put('/branch/:id', BranchController_1.default.update);
+router.get('/company', CompanyController_1.default.index);
+router.post('/company', CompanyController_1.default.create);
+router.delete('/company/:id', CompanyController_1.default.delete);
+router.put('/company/:id', CompanyController_1.default.update);
+router.get('/users', UserController_1.default.index);
+router.post('/user', UserController_1.default.create);
+router.delete('/user/:id', UserController_1.default.delete);
+router.put('/user/:id', UserController_1.default.update);
+exports.default = router;
