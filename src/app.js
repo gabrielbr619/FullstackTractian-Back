@@ -17,7 +17,7 @@ app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use(express_fileupload_1.default({ useTempFiles: true }));
 app.use(routes_1.default);
-mongoose_1.default.connect('mongodb+srv://gabrielbr619:gabrielbr619@cluster0.7z3nv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose_1.default.connect(CONNDOTENV, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true
