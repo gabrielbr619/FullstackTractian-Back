@@ -18,7 +18,7 @@ app.use(router)
 
 
 
-mongoose.connect('mongodb+srv://gabrielbr619:gabrielbr619@cluster0.7z3nv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+mongoose.connect(CONNDOTENV,{
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true
